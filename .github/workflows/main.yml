@@ -1,8 +1,0 @@
-name: Sample Work Flow branch1
-on:
-  push:
-jobs:
-  branch1:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo $PWD test complete!
