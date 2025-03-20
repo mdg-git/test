@@ -2,7 +2,7 @@ name: Auto deploy
 
 on:
   push:
-    branches: [ "main", "develop" ]
+    branches: [ "main", "develop", "compiler" ]
 
 jobs:
   auto-deploy:
@@ -28,3 +28,10 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: "/xs508212.xsrv.jp/public_html/develop/"
+
+      - name: Create feature branch
+        if:  github.ref == 'refs/heads/compiler'
+        run: |
+          git checkout compiler
+          git pull origin compiler
+          git subtree push --prefix dist origin compiler:feature
