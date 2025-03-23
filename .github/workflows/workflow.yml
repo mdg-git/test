@@ -34,7 +34,7 @@ jobs:
           server-dir: "/xs508212.xsrv.jp/public_html/develop/"
 
       - name: Create feature branch
-        if:  github.ref == 'refs/heads/compiler/default'
+        if:  github.ref == 'refs/heads/compiler/default' && github.event.pull_request.merged == true
         run: |
           compare=${{ github.event.pull_request.head.ref }}
           frag=${ compare#compiler }
