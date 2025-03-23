@@ -10,3 +10,5 @@ text.txtに変更を加え、compiler/default へマージします。
 マージリクエスト承認後に、feature ブランチが生成していることを確認します。
 
 マージリクエスト take2
+
+マージリクエスト take3
