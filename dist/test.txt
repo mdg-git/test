@@ -14,3 +14,5 @@ text.txtに変更を加え、compiler/default へマージします。
 マージリクエスト take3
 
 マージリクエスト take4
+
+マージリクエスト take5
