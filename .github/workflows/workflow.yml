@@ -36,6 +36,8 @@ jobs:
       - name: Create feature branch
         if:  github.ref == 'refs/heads/compiler/default'
         run: |
+          compare=${{ github.event.pull_request.head.ref }}
+          frag=${ compare#compiler }
           git checkout compiler/default
           git pull origin compiler/default
-          git subtree push --prefix dist origin compiler/default:feature/${{ github.event.pull_request.head.ref }}
+          git subtree push --prefix dist origin compiler/default:feature${ frag }
