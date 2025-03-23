@@ -34,7 +34,6 @@ jobs:
       - name: Create feature branch
         if:  github.ref == 'refs/heads/compiler'
         run: |
-          compare=${{ github.event.pull_request.head.ref }}
           git checkout compiler
           git pull origin compiler
-          git subtree push --prefix dist origin compiler:feature_${compare#compiler_}
+          git subtree push --prefix dist origin compiler:feature_${{ github.event.pull_request.user.login }}
