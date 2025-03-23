@@ -8,3 +8,5 @@ this is main branch!
 compiler/test ブランチを作成。
 text.txtに変更を加え、compiler/default へマージします。
 マージリクエスト承認後に、feature ブランチが生成していることを確認します。
+
+マージリクエスト take2
