@@ -36,4 +36,4 @@ jobs:
         run: |
           git checkout compiler/default
           git pull origin compiler/default
-          git subtree push --prefix dist origin compiler/default:feature_${{ github.event.pull_request.user.login }}
+          git subtree push --prefix dist origin compiler/default:feature/${{ github.event.pull_request.head.ref }}
