@@ -3,6 +3,8 @@ name: work flow
 on:
   push:
     branches: [ "main", "develop", "compiler/*" ]
+  pull_request:
+    types: [closed]
 
 jobs:
   auto-deploy:
