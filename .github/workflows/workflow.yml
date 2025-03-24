@@ -39,9 +39,12 @@ jobs:
           compare=${{ github.event.pull_request.head.ref }}
           frag=${compare#compiler}
           git fetch
-          git checkout develop
-          git checkout -b feature${frag}
-          git pull origin develop
+          
+          #git checkout develop
+          #git checkout -b feature${frag}
+          #git pull origin develop
+          
           git checkout compiler/default
           git pull origin compiler/default
-          git subtree push --prefix dist origin compiler/default:feature${frag}
+          git subtree split --prefix dist -b feature${frag} # git subtree split --prefix dist origin compiler/default:feature${frag}
+          git push origin feature${frag}
