@@ -2,7 +2,8 @@ name: work flow
 
 on:
   push:
-    branches: [ "main", "develop", "compiler/*" ]
+    #branches: [ "main", "develop", "compiler/*" ]
+    branches: [ "main", "develop" ]
   pull_request:
     types: [closed]
 
@@ -33,18 +34,18 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: "/xs508212.xsrv.jp/public_html/develop/"
 
-      - name: Create feature branch
-        if:  github.ref == 'refs/heads/compiler/default' && github.event.pull_request.merged == true
-        run: |
-          compare=${{ github.event.pull_request.head.ref }}
-          frag=${compare#compiler}
-          git fetch
+      # - name: Create feature branch
+      #   if:  github.ref == 'refs/heads/compiler/default' && github.event.pull_request.merged == true
+      #   run: |
+      #     compare=${{ github.event.pull_request.head.ref }}
+      #     frag=${compare#compiler}
+      #     git fetch
           
-          #git checkout develop
-          #git checkout -b feature${frag}
-          #git pull origin develop
+      #     #git checkout develop
+      #     #git checkout -b feature${frag}
+      #     #git pull origin develop
           
-          git checkout compiler/default
-          git pull origin compiler/default
-          git subtree split --prefix dist -b feature${frag} # git subtree split --prefix dist origin compiler/default:feature${frag}
-          git push origin feature${frag}
+      #     #git checkout compiler/default
+      #     #git pull origin compiler/default
+      #     #git subtree split --prefix dist -b feature${frag} # git subtree split --prefix dist origin compiler/default:feature${frag}
+      #     #git push origin feature${frag}
