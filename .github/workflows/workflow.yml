@@ -38,6 +38,7 @@ jobs:
         run: |
           compare=${{ github.event.pull_request.head.ref }}
           frag=${compare#compiler}
+          git fetch
           git checkout compiler/default
           git pull origin compiler/default
           git checkout develop
