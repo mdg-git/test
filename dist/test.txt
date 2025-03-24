@@ -11,4 +11,4 @@ this is main branch!
 今回は別のファイルも変更を加えます。
 
 
-subtree featureブランチのマージ確認です。
+subtree featureブランチのマージ確認用です。
