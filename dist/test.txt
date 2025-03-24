@@ -12,5 +12,3 @@ this is main branch!
 
 
 subtree featureブランチのマージ確認用です。
-
-subtree feature merge test take2
